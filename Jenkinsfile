@@ -29,7 +29,7 @@ pipeline{
                 sh 'mvn run package'
         }
     }
-
+    }
     post{
         always{
             echo 'this is my second pipeline has completed... Shopping Cart'
