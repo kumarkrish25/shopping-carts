@@ -26,7 +26,7 @@ pipeline{
         stage('package'){
             steps{
                 echo 'this is the package job'
-                sh 'mvn run package'
+                sh 'mvn package'
 			}
 		}
 		stage('archive-the-app') {
