@@ -27,14 +27,19 @@ pipeline{
             steps{
                 echo 'this is the package job'
                 sh 'mvn run package'
-        }
-    }
-}    
+			}
+		}
+		stage('archive-the-app') {
+			steps {
+			echo 'Creating Archive'
+			archiveArtifacts '**/target/*.jar'
+			}
+		}
+    }  
     post{
         always{
             echo 'this is my second pipeline has completed... Shopping Cart'
         }
         
-    }
-    
+    }   
 }
