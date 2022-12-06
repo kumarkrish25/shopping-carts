@@ -1,28 +1,28 @@
 pipeline {
   agent any
   stages {
-    stage('build') {
+    stage('build-the-app') {
       steps {
         echo 'this is the build job'
         sh 'mvn compile'
       }
     }
 
-    stage('test') {
+    stage('test-the-app') {
       steps {
         echo 'this is the test job'
         sh 'mvn clean test'
       }
     }
 
-    stage('package') {
+    stage('package-the-app') {
       steps {
         echo 'this is the package job'
-        sh 'mvn package -DskipTests'
+        sh 'mvn package'
       }
     }
 
-    stage('archive') {
+    stage('archive-the-app') {
       steps {
         archiveArtifacts '**/target/*.jar'
       }
