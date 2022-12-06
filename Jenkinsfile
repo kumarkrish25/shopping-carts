@@ -1,6 +1,6 @@
 pipeline{
 
-    agent any 
+    agent any
 
 // uncomment the following lines by removing /* and */ to enable
    tools{
@@ -29,7 +29,7 @@ pipeline{
                 sh 'mvn run package'
         }
     }
-    }
+}    
     post{
         always{
             echo 'this is my second pipeline has completed... Shopping Cart'
@@ -37,5 +37,4 @@ pipeline{
         
     }
     
-}
 }
